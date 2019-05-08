@@ -1,10 +1,15 @@
 {%extends "layout.html"%}
 
 {%block contents%}
+
 <div class="container panel panel-default ">
     <div class="panel-body">
+
         <div class="header">
             <h3>ランキング</h3>
+        </div>
+        <div class="text-center">
+            {{ pagination.links }}
         </div>
         <table class="table">
             <thead>
@@ -20,7 +25,7 @@
                 {% for info in catinfo %}
                 <tr>
                     <td>
-                        {{loop.index}}
+                        {{loop.index + pagination.skip}}
                     </td>
                     <td><a href="cat?id={{info.id}}"><img src="static/img/{{info.id}}.png" class="img-thumbnail"
                                 height="128" width="128"></a></td>
@@ -31,6 +36,10 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="text-center">
+            {{ pagination.links }}
+        </div>
     </div>
 </div>
+
 {%endblock%}
