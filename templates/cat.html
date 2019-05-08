@@ -1,0 +1,38 @@
+{%extends "layout.html"%}
+
+{%block contents%}
+
+<div class="container panel panel-default ">
+    <div class="header">
+        <h3>詳細</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="static/img/{{id}}.png">
+            </div>
+            <div class="col-sm-6">
+                <table>
+                    <tr>
+                        <th>ID </th>
+                        <td>{{id}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>レート</th>
+                        <td>{{rate}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>特徴量</th>
+                    <td> <textarea class="form-control rounded-0" id="exampleFormControlTextarea1"
+                            rows="10">{{latents}}</textarea>
+                    </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

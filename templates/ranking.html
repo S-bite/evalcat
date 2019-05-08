@@ -1,0 +1,36 @@
+{%extends "layout.html"%}
+
+{%block contents%}
+<div class="container panel panel-default ">
+    <div class="panel-body">
+        <div class="header">
+            <h3>ランキング</h3>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>順位</th>
+                    <th>イメージ(クリックで詳細ページへ移動)</th>
+                    <th>id</th>
+
+                    <th class="sort" data-sort="rate">レート</th>
+                </tr>
+            </thead>
+            <tbody class="list">
+                {% for info in catinfo %}
+                <tr>
+                    <td>
+                        {{loop.index}}
+                    </td>
+                    <td><a href="cat?id={{info.id}}"><img src="static/img/{{info.id}}.png" class="img-thumbnail"
+                                height="128" width="128"></a></td>
+                    <td>{{info.id}}</td>
+
+                    <td>{{info.rate}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{%endblock%}

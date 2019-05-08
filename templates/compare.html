@@ -1,0 +1,24 @@
+<style type="text/css">
+    .wrap {
+        text-align: center;
+    }
+</style>
+{%extends "layout.html"%}
+
+{%block contents%}
+
+
+<div class="container panel panel-default">
+    <div class="panel-body">
+        <div class="wrap">
+            <b>Which one is more cute?</b>
+        </div>
+        <div class="wrap">
+            <a href="result?win={{img1}}&lose={{img2}}"><img src="/static/img/{{img1}}.png"></a>
+            <a href="result?win={{img2}}&lose={{img1}}"><img src="/static/img/{{img2}}.png"></a>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}
