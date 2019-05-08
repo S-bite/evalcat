@@ -82,5 +82,7 @@ with open('latentsdict.pkl', 'rb') as f:
 with open("rating.pkl", "rb") as f:
     rating = pickle.load(f)
 
+
+# main loop
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, threaded=True)
