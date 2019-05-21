@@ -95,7 +95,7 @@ CATNUM = len(cats)
 if __name__ == "__main__":
 
     # product
-    # app.run(host="0.0.0.0", port=80, threaded=True)
+    app.run(host="0.0.0.0", port=80, threaded=True)
 
     # debug
-    app.run(host="localhost", port=8080, threaded=True, debug=True)
+    #app.run(host="localhost", port=8080, threaded=True, debug=True)
