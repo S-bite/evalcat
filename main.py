@@ -4,6 +4,7 @@ from flask_paginate import Pagination, get_page_parameter
 
 import pickle
 import random
+import sys
 
 app = Flask(__name__)
 
@@ -93,9 +94,9 @@ CATNUM = len(cats)
 
 # main loop
 if __name__ == "__main__":
-
-    # product
-    app.run(host="0.0.0.0", port=80, threaded=True)
-
-    # debug
-    #app.run(host="localhost", port=8080, threaded=True, debug=True)
+    if (len(sys.argv) != 1 and sys.argv[1] == "debug"):
+        # debug
+        app.run(host="localhost", port=8080, threaded=True, debug=True)
+    else:
+        # product
+        app.run(host="0.0.0.0", port=80, threaded=True)
